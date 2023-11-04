@@ -1,8 +1,4 @@
 <div align="center">
-    <p><b>Due to the complexity of the project and lack of any revenue, the project has been discontinued.</b></p>
-</div>
-
-<div align="center">
     <p>
     <h3>
       <b>
@@ -73,17 +69,9 @@ This repository contains the twoyi app, and the twoyi ROM is currently being tur
 
 ### Build the App manually
 
-#### Install Rust
+#### Install Rust, Cargo and cargo-xdk
 
-Twoyi is partially written in Rust, so it's nessesary to [install Rust and Cargo](https://www.rust-lang.org/tools/install) first.
-
-#### Install cargo-xdk
-
-Please refer to [cargo-xdk](https://github.com/tiann/cargo-xdk).
-
-You can check if it is installed by running `./gradlew cargoBuild`. If it succeeded, you will see libtwoyi.so in `app/src/main/jniLibs/arm64-v8a`.
-
-PS. Please use ndk v22 or lower, otherwise it may fail.
+Please refer to [Rust and Cargo](https://www.rust-lang.org/tools/install) and [cargo-xdk](https://github.com/tiann/cargo-xdk).
 
 #### Integrating rootfs
 
@@ -92,7 +80,13 @@ To do that, extract rootfs.7z from the official release apk and copy it to `app/
 
 ### Build the app with Android Studio
 
-Build it with Android Studio normally.
+1. Build libtwoyi.so.
+
+```
+cd app/rs
+cargo xdk -t arm64-v8a -o ../src/main/jniLibs build --release
+```
+2. Build apk with Android Studio normally.
 
 ### Build the ROM
 
