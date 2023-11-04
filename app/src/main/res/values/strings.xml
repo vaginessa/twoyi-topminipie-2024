@@ -14,7 +14,6 @@
     <string name="about_btn">About</string>
     <string name="copy_right" translatable="false">Copyright © %1$d</string>
     <string name="help_text">Help</string>
-    <string name="check_update">Check update</string>
     <string name="about_follow_gongzhonghao">Follow WeChat Public Account</string>
     <string name="wechat_public_account_tips">The number has copied to clipboard, please search and follow it.</string>
     <string name="about_author">Author: weishu (Contact me)</string>

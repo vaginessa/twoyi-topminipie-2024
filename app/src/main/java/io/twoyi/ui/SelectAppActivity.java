@@ -165,8 +165,6 @@ public class SelectAppActivity extends AppCompatActivity {
         }
 
         loadAsync();
-
-        // UpdateUtil.checkForceUpdate(this);
     }
 
     private void selectComplete(Set<AppItem> pkgs) {

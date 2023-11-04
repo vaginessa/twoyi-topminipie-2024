@@ -53,7 +53,6 @@ public class AboutActivity extends AppCompatActivity {
                 .addItem(getCopyRightsElement())
                 .addItem(getAuthorElement())
                 .addItem(getVersionElement())
-                .addItem(getCheckUpdateElement())
                 .addItem(getWeChatPublicNumberElement())
                 .addItem(getWebsiteElement())
                 .addItem(getFaqElement())
@@ -115,16 +114,6 @@ public class AboutActivity extends AppCompatActivity {
         element.setTitle(getResources().getString(R.string.help_text));
         element.setOnClickListener(v -> UIHelper.showFAQ(AboutActivity.this));
         return element;
-    }
-
-    Element getCheckUpdateElement() {
-        Element checkUpdate = new Element();
-        checkUpdate.setTitle(getResources().getString(R.string.check_update));
-        checkUpdate.setOnClickListener(v -> {
-            // TODO: checkUpdate
-            // UpdateUtil.checkUpdateImmediately(getApplicationContext(), true);
-        });
-        return checkUpdate;
     }
 
     Element getWeChatPublicNumberElement() {
