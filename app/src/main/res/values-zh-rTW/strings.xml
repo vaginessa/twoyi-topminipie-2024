@@ -29,11 +29,7 @@
     <string name="privacy">隱私協議</string>
     <string name="wechat_public_account_tips">公眾號名字已經複製到剪貼簿，請搜尋，然後直接關注即可。</string>
     <string name="i_know_it">我知道了</string>
-    <string name="donate_alipay">支付寶</string>
-    <string name="donate_others">其它方式</string>
-    <string name="prompt_alipay_not_found">你沒有安裝支付寶 ~_~</string>
-    <string name="donate_never_show">不再提示</string>
-    <string name="donate_choose_title">選擇贊助方式</string>
+    <string name="never_show">不再提示</string>
     <string name="about_feedback_title">問題回饋</string>
     <string name="feedback_confirm">如果你遇到了一些問題，可以先查閱說明文件；如果說明文件實在無法解決，或者你有額外的需求，可以聯絡我。</string>
     <string name="feedback_ok">去回饋</string>
@@ -55,8 +51,6 @@
     <string name="settings_key_about">關於</string>
     <string name="settings_key_import_app">匯入應用</string>
     <string name="settings_import_summary">從外部系統中匯入應用至兩儀</string>
-    <string name="settings_key_donate">捐贈</string>
-    <string name="settings_donate_summary">予人玫瑰，手有餘香~</string>
     <string name="install_failed_reason">安裝失敗: %1$s</string>
     <string name="look_it">去查看</string>
     <string name="tips_for_android12">您正在 Android 12 上使用兩儀，請參閱 Android 12 使用指南，否則將無法正常使用！</string>

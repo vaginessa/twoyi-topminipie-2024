@@ -29,11 +29,7 @@
     <string name="privacy">隐私协议</string>
     <string name="wechat_public_account_tips">公众号名字已经复制到剪切板，请搜索，然后直接关注即可。</string>
     <string name="i_know_it">我知道了</string>
-    <string name="donate_alipay">支付宝</string>
-    <string name="donate_others">其它方式</string>
-    <string name="prompt_alipay_not_found">你没有安装支付宝 ~_~</string>
-    <string name="donate_never_show">不再提示</string>
-    <string name="donate_choose_title">选择赞助方式</string>
+    <string name="never_show">不再提示</string>
     <string name="about_feedback_title">问题反馈</string>
     <string name="feedback_confirm">如果你遇到了一些问题，可以先查阅帮助文档；如果帮助文档实在无法解决，或者你有额外的需求，可以联系我。</string>
     <string name="feedback_ok">去反馈</string>
@@ -55,8 +51,6 @@
     <string name="settings_key_about">关于</string>
     <string name="settings_key_import_app">导入应用</string>
     <string name="settings_import_summary">从外部系统中导入应用至两仪</string>
-    <string name="settings_key_donate">捐赠</string>
-    <string name="settings_donate_summary">予人玫瑰，手有余香~</string>
     <string name="install_failed_reason">安装失败: %1$s</string>
     <string name="look_it">去查看</string>
     <string name="tips_for_android12">您正在 Android 12 上使用两仪，请参阅 Android 12 使用指南，否则将无法正常使用！</string>

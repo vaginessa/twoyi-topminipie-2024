@@ -142,48 +142,6 @@ public class UIHelper {
                 .build();
     }
 
-    public static void showDonateDialog(Activity activity) {
-        if (activity == null) {
-            return;
-        }
-
-        final String alipay = activity.getResources().getString(R.string.donate_alipay);
-        final String donateOthers = activity.getResources().getString(R.string.donate_others);
-        final String[] items = {alipay, "Paypal", donateOthers};
-
-        AlertDialog chooseDialog = getDialogBuilder(activity)
-                .setTitle(R.string.donate_choose_title)
-                .setItems(items, (dialog1, which1) -> {
-                    dialog1.dismiss();
-
-                    if (which1 == 0) {
-                        if (!AlipayZeroSdk.hasInstalledAlipayClient(activity)) {
-                            Toast.makeText(activity.getApplicationContext(), R.string.prompt_alipay_not_found, Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                        AlipayZeroSdk.startAlipayClient(activity, "FKX016770URBZGZSR37U37");
-                    } else if (which1 == 1) {
-                        try {
-                            Intent t1 = new Intent(Intent.ACTION_VIEW);
-                            t1.setData(Uri.parse("https://paypal.me/virtualxposed"));
-                            activity.startActivity(t1);
-                        } catch (Throwable ignored) {
-                            ignored.printStackTrace();
-                        }
-                    } else if (which1 == 2) {
-                        try {
-                            Intent t = new Intent(Intent.ACTION_VIEW);
-                            t.setData(Uri.parse("https://twoyi.app/guide/sponsor.html"));
-                            activity.startActivity(t);
-                        } catch (Throwable ignored) {
-                        }
-                    }
-                })
-                .create();
-
-        show(chooseDialog);
-    }
-
     public static void showPrivacy(Context context) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW);

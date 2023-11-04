@@ -102,7 +102,6 @@ public class SettingsActivity extends AppCompatActivity {
             Preference replaceRom = findPreference(R.string.settings_key_replace_rom);
             Preference factoryReset = findPreference(R.string.settings_key_factory_reset);
 
-            Preference donate = findPreference(R.string.settings_key_donate);
             Preference about = findPreference(R.string.settings_key_about);
 
             importApp.setOnPreferenceClickListener(preference -> {
@@ -161,15 +160,6 @@ public class SettingsActivity extends AppCompatActivity {
                         .setNegativeButton(android.R.string.cancel, (dialog, which) -> dialog.dismiss())
                         .show();
                 return true;
-            });
-
-            donate.setOnPreferenceClickListener(preference -> {
-                Context context = getContext();
-                if (context instanceof Activity) {
-                    UIHelper.showDonateDialog((Activity) context);
-                    return true;
-                }
-                return false;
             });
 
             about.setOnPreferenceClickListener(preference -> {

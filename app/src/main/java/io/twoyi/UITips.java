@@ -42,7 +42,7 @@ public class UITips {
 
                     activity.finish();
                 }))
-                .setNegativeButton(R.string.donate_never_show, (dialog, which) -> {
+                .setNegativeButton(R.string.never_show, (dialog, which) -> {
                     dialog.dismiss();
 
                     confirmForAndroid12(activity, bootCallback);

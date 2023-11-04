@@ -29,11 +29,7 @@
     <string name="i_know_it">了解</string>
     <string name="progress_dialog_title">少々お待ちください</string>
 
-    <string name="donate_alipay">Alipay</string>
-    <string name="donate_others">他の方法</string>
-    <string name="donate_choose_title">寄付の方法を選択</string>
-    <string name="prompt_alipay_not_found">Alipayが見つかりません。</string>
-    <string name="donate_never_show">再度表示しない</string>
+    <string name="never_show">再度表示しない</string>
     <string name="about_feedback_title">TwoYiのフィードバック</string>
     <string name="feedback_confirm">問題が発生した場合はまずFAQを読んでください！もし機能の要望があれば私に連絡してください。</string>
     <string name="feedback_ok">フィードバックする</string>
@@ -55,8 +51,6 @@
     <string name="settings_key_about">このアプリについて</string>
     <string name="settings_key_import_app">アプリをインポート</string>
     <string name="settings_import_summary">外部システムからアプリをインポート</string>
-    <string name="settings_key_donate">寄付</string>
-    <string name="settings_donate_summary">twoyiをよりよくするために寄付をする :)</string>
     <string name="install_failed_reason">インストールに失敗しました: %1$s</string>
     <string name="look_it">読む</string>
     <string name="tips_for_android12">Android 12 をお使いの場合、twoyiの使用方法についてガイドに従ってください。</string>
