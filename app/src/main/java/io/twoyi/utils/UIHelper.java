@@ -8,8 +8,6 @@ package io.twoyi.utils;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ClipData;
@@ -29,6 +27,8 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import androidx.annotation.StringRes;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
@@ -48,7 +48,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import io.twoyi.R;
-import moe.feng.alipay.zerosdk.AlipayZeroSdk;
 
 /**
  * @author weishu
@@ -110,7 +109,7 @@ public class UIHelper {
     }
 
     public static AlertDialog.Builder getDialogBuilder(Context context) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context, com.google.android.material.R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog);
         builder.setIcon(R.mipmap.ic_launcher);
         return builder;
     }
@@ -145,7 +144,7 @@ public class UIHelper {
     public static void showPrivacy(Context context) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW);
-            if (!(context instanceof Activity)) {
+            if (!(context instanceof AppCompatActivity)) {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             }
             intent.setData(Uri.parse("https://twoyi.app/privacy"));
@@ -157,7 +156,7 @@ public class UIHelper {
     public static void showFAQ(Context context) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW);
-            if (!(context instanceof Activity)) {
+            if (!(context instanceof AppCompatActivity)) {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             }
             intent.setData(Uri.parse("https://twoyi.app/guide"));
@@ -282,7 +281,7 @@ public class UIHelper {
 
         Intent intent = new Intent(context, clazz);
 
-        if (!(context instanceof Activity)) {
+        if (!(context instanceof AppCompatActivity)) {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
 

@@ -41,6 +41,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
 import androidx.core.widget.CompoundButtonCompat;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -215,7 +216,7 @@ public class SelectAppActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.search_menu, menu);
         MenuItem searchItem = menu.findItem(R.id.menu_search);
 
-        SearchView searchView = (SearchView) searchItem.getActionView();
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         // 当SearchView获得焦点时弹出软键盘的类型，就是设置输入类型
         searchView.setIconified(false);
         searchView.onActionViewExpanded();

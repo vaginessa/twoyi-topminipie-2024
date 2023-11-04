@@ -21,8 +21,8 @@
     </style>
 
     <style name="Theme.Twoyi.FullScreen" parent="@style/ThemeOverlay.AppCompat.Dark">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowBackground">@color/black</item>

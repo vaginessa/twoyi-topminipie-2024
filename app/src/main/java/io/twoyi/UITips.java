@@ -6,7 +6,7 @@
 
 package io.twoyi;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import io.twoyi.utils.AppKV;
 import io.twoyi.utils.RomManager;
@@ -24,7 +24,7 @@ public class UITips {
      * @param bootCallback 不是 Android 12 或者用户点了确认时触发的回调
      * @return 返回 true 代表不是 Android 12，或者允许用户启动
      */
-    public static boolean checkForAndroid12(Activity activity, Runnable bootCallback) {
+    public static boolean checkForAndroid12(AppCompatActivity activity, Runnable bootCallback) {
         boolean showTips = AppKV.getBooleanConfig(activity, AppKV.SHOW_ANDROID12_TIPS, true);
 
         if (!RomManager.isAndroid12() || !showTips) {
@@ -52,7 +52,7 @@ public class UITips {
         return false;
     }
 
-    private static void confirmForAndroid12(Activity activity, Runnable callback) {
+    private static void confirmForAndroid12(AppCompatActivity activity, Runnable callback) {
         UIHelper.getDialogBuilder(activity)
                 .setTitle(android.R.string.dialog_alert_title)
                 .setCancelable(false)

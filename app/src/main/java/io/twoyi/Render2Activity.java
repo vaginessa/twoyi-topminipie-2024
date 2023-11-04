@@ -18,7 +18,6 @@
 
 package io.twoyi;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.DisplayMetrics;
@@ -36,6 +35,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.cleveroad.androidmanimation.LoadingAnimationView;
 
@@ -50,7 +50,7 @@ import io.twoyi.utils.RomManager;
  * @author weishu
  * @date 2021/10/20.
  */
-public class Render2Activity extends Activity implements View.OnTouchListener {
+public class Render2Activity extends AppCompatActivity implements View.OnTouchListener {
 
     private static final String TAG = "Render2Activity";
 

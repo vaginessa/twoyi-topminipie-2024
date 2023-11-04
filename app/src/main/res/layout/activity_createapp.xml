@@ -37,12 +37,12 @@
 
         <TextView
             android:id="@+id/create_app_btn"
-            style="@android:style/Widget.Material.Button"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="bottom|center"
             android:background="@color/colorPrimary"
-            android:foreground="?android:attr/selectableItemBackground"
+            android:foreground="?attr/selectableItemBackground"
             android:text="@string/select_app_button"
             android:textColor="@android:color/white"
             android:textSize="18sp"
