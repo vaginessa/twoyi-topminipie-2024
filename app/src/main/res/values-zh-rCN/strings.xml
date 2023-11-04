@@ -7,7 +7,6 @@
 
 <resources>
     <string name="app_name">两仪</string>
-    <string name="booting_tips">两仪正在启动…</string>
     <string name="extracting_tips">两仪正在初始化系统…</string>
     <string name="first_boot_tips">第一次初始化时间较长，请耐心等待…</string>
     <string name="first_boot_tips2">初始化过程一切正常，请继续等待…</string>
@@ -28,22 +27,18 @@
 
     <string name="about_page_website">官方网站</string>
     <string name="privacy">隐私协议</string>
-    <string name="about_feedback_qq_title">QQ 群（点击加入）</string>
     <string name="wechat_public_account_tips">公众号名字已经复制到剪切板，请搜索，然后直接关注即可。</string>
     <string name="i_know_it">我知道了</string>
     <string name="donate_alipay">支付宝</string>
     <string name="donate_others">其它方式</string>
     <string name="prompt_alipay_not_found">你没有安装支付宝 ~_~</string>
-    <string name="donate_confirm">支持一下！</string>
     <string name="donate_never_show">不再提示</string>
     <string name="donate_choose_title">选择赞助方式</string>
-    <string name="app_guide_title">重要提示</string>
     <string name="about_feedback_title">问题反馈</string>
     <string name="feedback_confirm">如果你遇到了一些问题，可以先查阅帮助文档；如果帮助文档实在无法解决，或者你有额外的需求，可以联系我。</string>
     <string name="feedback_ok">去反馈</string>
     <string name="read_faq_text">查阅帮助</string>
     <string name="menu_not_show_system">不显示系统应用</string>
-    <string name="menu_not_show_added">不显示已添加应用</string>
     <string name="select_app_button">导入</string>
     <string name="create_app_no_apps">这不科学，竟然没有找到任何应用？\n 请尝试给予两仪查看安装包列表的权限。</string>
     <string name="create_app_all_apps_added">没有应用需要添加 \n 是不是把所有 APP 都添加完啦 :)</string>
@@ -56,7 +51,6 @@
     <string name="unsupported_for_32bit_app">不支持 32 位的应用哦 :(</string>
     <string name="please_install_one_by_one">暂不支持同时安装多个应用！</string>
     <string name="install_success">安装成功!</string>
-    <string name="install_failed">安装失败: %1$s</string>
     <string name="title_settings">设置</string>
     <string name="settings_key_about">关于</string>
     <string name="settings_key_import_app">导入应用</string>
@@ -66,8 +60,6 @@
     <string name="install_failed_reason">安装失败: %1$s</string>
     <string name="look_it">去查看</string>
     <string name="tips_for_android12">您正在 Android 12 上使用两仪，请参阅 Android 12 使用指南，否则将无法正常使用！</string>
-    <string name="settings_key_sendlog">发送日志</string>
-    <string name="settings_sendlog_summary">共享日志给开发者以定位问题</string>
     <string name="sdcard_of_twoyi">两仪的 sdcard</string>
     <string name="confirm_for_android12">请务必确认您已经按照教程设置！！否则系统可能将无法启动！！！</string>
     <string name="i_confirm_it">我已确认</string>
@@ -82,8 +74,6 @@
     <string name="settings_category_other">其他</string>
     <string name="settings_key_factory_reset">恢复出厂设置</string>
     <string name="settings_factory_reset_summary">恢复为出厂官方系统（数据会保留）</string>
-    <string name="settings_key_wipe_all_data">清除所有数据</string>
-    <string name="settings_wipe_all_data_summary">两仪内部数据将会被全部删除</string>
     <string name="factory_reset_confirm_message">两仪内部系统将恢复到初始状态，数据将会保留，但系统设置会丢失，第三方系统将会被移除，是否继续？</string>
     <string name="settings_key_manage_files">文件管理</string>
     <string name="settings_export_summary">导入/导出两仪内部文件</string>

@@ -99,8 +99,6 @@ public final class RomManager {
         createLoaderSymlink(context);
 
         killOrphanProcess();
-
-        saveLastKmsg(context);
     }
 
     private static void createLoaderSymlink(Context context) {
@@ -117,15 +115,6 @@ public final class RomManager {
     private static void killOrphanProcess() {
         Shell shell = ShellUtil.newSh();
         shell.newJob().add("ps -ef | awk '{if($3==1) print $2}' | xargs kill -9").exec();
-    }
-
-    private static void saveLastKmsg(Context context) {
-        File lastKmsgFile = LogEvents.getLastKmsgFile(context);
-        File kmsgFile = LogEvents.getKmsgFile(context);
-        try {
-            Files.move(kmsgFile.toPath(), lastKmsgFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException ignored) {
-        }
     }
 
     public static class RomInfo {
@@ -196,9 +185,7 @@ public final class RomManager {
                     return getRomInfo(bais);
                 }
             }
-        } catch (Throwable e) {
-            LogEvents.trackError(e);
-        }
+        } catch (Throwable ignored) {}
         return DEFAULT_ROM_INFO;
     }
 

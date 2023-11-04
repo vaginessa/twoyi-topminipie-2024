@@ -21,8 +21,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import io.twoyi.utils.LogEvents;
-
 /**
  * @author weishu
  * @date 2021/10/27.
@@ -51,9 +49,7 @@ public class TwoyiStatusManager {
         if (mStarted.compareAndSet(false, true)) {
             try {
                 mBootLatch.await();
-            } catch (BrokenBarrierException | InterruptedException e) {
-                LogEvents.trackError(e);
-            }
+            } catch (BrokenBarrierException | InterruptedException ignored) {}
         }
     }
 

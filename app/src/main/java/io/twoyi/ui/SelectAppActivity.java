@@ -65,7 +65,6 @@ import io.twoyi.utils.AppKV;
 import io.twoyi.utils.CacheManager;
 import io.twoyi.utils.IOUtils;
 import io.twoyi.utils.Installer;
-import io.twoyi.utils.LogEvents;
 import io.twoyi.utils.UIHelper;
 import io.twoyi.utils.image.GlideModule;
 
@@ -376,7 +375,6 @@ public class SelectAppActivity extends AppCompatActivity {
                     os.write(buffer, 0, count);
                 }
             } catch (IOException e) {
-                LogEvents.trackError(e);
                 continue;
             }
 

@@ -44,12 +44,6 @@
 
 
     <PreferenceCategory android:title="@string/settings_category_other">
-
-        <Preference
-            android:key="@string/settings_key_sendlog"
-            android:summary="@string/settings_sendlog_summary"
-            android:title="@string/settings_key_sendlog" />
-
         <Preference
             android:key="@string/settings_key_donate"
             android:summary="@string/settings_donate_summary"
