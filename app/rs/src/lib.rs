@@ -6,7 +6,7 @@ use jni::objects::JValue;
 use jni::sys::{jclass, jfloat, jint, jobject, JNI_ERR, jstring};
 use jni::JNIEnv;
 use jni::{JavaVM, NativeMethod};
-use log::{error, info, Level, debug};
+use log::{error, info, debug};
 use ndk_sys;
 use std::ffi::c_void;
 
@@ -187,7 +187,7 @@ unsafe fn register_natives(jvm: &JavaVM, class_name: &str, methods: &[NativeMeth
 unsafe fn JNI_OnLoad(jvm: JavaVM, _reserved: *mut c_void) -> jint {
     android_logger::init_once(
         Config::default()
-            .with_min_level(Level::Info)
+            .with_max_level(log::LevelFilter::Info)
             .with_tag("CLIENT_EGL"),
     );
 
