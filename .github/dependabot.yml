@@ -4,3 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: daily
+    package-ecosystem: cargo
+    directory: "/app/rs"
+    schedule:
+      interval: daily
