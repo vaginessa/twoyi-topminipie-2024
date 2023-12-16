@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: daily
     open-pull-requests-limit: 20
-    package-ecosystem: cargo
+  - package-ecosystem: cargo
     directory: "/app/rs"
     schedule:
       interval: daily
