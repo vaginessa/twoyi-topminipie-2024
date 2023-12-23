@@ -28,4 +28,4 @@ uinput-sys = "0.1.7"
 unix_socket = "0.5.0"
 
 [patch.crates-io]
-uinput-sys = { git = 'https://github.com/tiann/rust-uinput-sys' }
+uinput-sys = { git = 'https://github.com/topminipie/rust-uinput-sys' }
