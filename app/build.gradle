@@ -9,7 +9,7 @@ android {
         minSdkVersion 27
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 27
-        versionCode 10354
+        versionCode 054
         versionName "0.5.4"
 
         ndk {
