@@ -1,18 +1,8 @@
-import java.text.SimpleDateFormat
-
-/*
- * This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at https://mozilla.org/MPL/2.0/.
- */
-
 plugins {
     id 'com.android.application'
 }
 
 android {
-    def buildSerial = new SimpleDateFormat("MMddHHmm").format(new Date())
-
     defaultConfig {
         applicationId "io.twoyi"
         compileSdk 34
@@ -20,13 +10,12 @@ android {
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 27
         versionCode 10354
-        versionName "0.5.4-${buildSerial}"
+        versionName "0.5.4"
 
         ndk {
             //noinspection ChromeOsAbiSupport
             abiFilters "arm64-v8a"
         }
-        archivesBaseName = "twoyi_${versionName}"
     }
 
     buildTypes {
