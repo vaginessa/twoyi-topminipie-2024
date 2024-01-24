@@ -10,6 +10,9 @@ on:
     branches: 'main'
     paths-ignore:
       - 'README.md'
+  
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -36,12 +39,6 @@ jobs:
       with:
         ndk-version: r26b
         local-cache: true
-
-    #- name: Install Rust
-    #  uses: dtolnay/rust-toolchain@master
-    #  with:
-    #    toolchain: stable
-    #    targets: aarch64-linux-android
 
     - name: Install Rust
       run: |
