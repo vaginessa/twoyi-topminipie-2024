@@ -44,6 +44,8 @@ jobs:
 
     - name: Rust cache
       uses: Swatinem/rust-cache@v2
+      with:
+        workspaces: "app/rs"
 
     - name: Install my fork cargo-ndk
       run: |
