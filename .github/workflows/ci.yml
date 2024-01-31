@@ -15,63 +15,55 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  debug-build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Download ROM
-      run: |
-        mkdir ./app/src/main/assets
-        cd ./app/src/main/assets
-        curl -OL https://github.com/topminipie/twoyi/releases/download/0.5.4-rom/rootfs.7z
-        curl -OL https://github.com/topminipie/twoyi/releases/download/0.5.4-rom/rom.ini
+      - name: Download ROM
+        run: |
+          mkdir ./app/src/main/assets
+          cd ./app/src/main/assets
+          curl -OL https://github.com/topminipie/twoyi/releases/download/0.5.4-rom/rootfs.7z
+          curl -OL https://github.com/topminipie/twoyi/releases/download/0.5.4-rom/rom.ini
 
-    - name: Install JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: 17
-        distribution: 'temurin'
-        cache: 'gradle'
+      - name: Install JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'temurin'
+          cache: 'gradle'
 
-    - name: Install NDK
-      uses: nttld/setup-ndk@v1
-      with:
-        ndk-version: r26b
-        local-cache: true
+      - name: Install NDK
+        uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r26b
+          local-cache: true
 
-    - name: Install Rust
-      run: |
-        rustup update
-        rustup target add aarch64-linux-android
+      - name: Install Rust
+        run: |
+          rustup update
+          rustup target add aarch64-linux-android
 
-    - name: Rust cache
-      uses: Swatinem/rust-cache@v2
-      with:
-        workspaces: "app/rs"
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: "app/rs"
 
-    - name: Install my fork cargo-ndk
-      run: |
-        cargo install --git https://github.com/topminipie/cargo-ndk.git
+      - name: Install my fork cargo-ndk
+        run: |
+          cargo install --git https://github.com/topminipie/cargo-ndk.git
 
-    - name: Build libtwoyi.so
-      run: |
-        cd ./app/rs
-        cargo ndk -t arm64-v8a -o ../src/main/jniLibs build --release
+      - name: Build libtwoyi.so
+        run: |
+          cd ./app/rs
+          cargo ndk -t arm64-v8a -o ../src/main/jniLibs build --release
 
-    - name: Build app
-      run: ./gradlew assembleRelease --warning-mode all
+      - name: Build app
+        run: /gradlew assembleDebug --warning-mode all
 
-    - name: Sign Apk
-      id: sign_apk
-      uses: ilharp/sign-android-release@v1
-      with:
-        signingKey: ${{ secrets.ANDROID_SIGNING_KEY }}
-        keyAlias: ${{ secrets.ANDROID_KEY_ALIAS }}
-        keyStorePassword: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-
-    - name: Upload Apk
-      uses: actions/upload-artifact@v4
-      with:
-        name: App
-        path: ${{steps.sign_apk.outputs.signedFile}}
+      - name: Upload Apk
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: app/build/outputs/apk/debug/app-debug.apk
