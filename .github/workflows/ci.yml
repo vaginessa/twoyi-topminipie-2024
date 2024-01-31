@@ -60,7 +60,7 @@ jobs:
           cargo ndk -t arm64-v8a -o ../src/main/jniLibs build --release
 
       - name: Build app
-        run: /gradlew assembleDebug --warning-mode all
+        run: ./gradlew assembleDebug --warning-mode all
 
       - name: Upload Apk
         uses: actions/upload-artifact@v4
