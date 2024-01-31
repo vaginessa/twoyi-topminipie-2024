@@ -75,9 +75,9 @@ dependencies = [
 
 [[package]]
 name = "ioctl-sys"
-version = "0.7.1"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f9d0b6b23885487578d10590edc36fd95426257c7017973b20633e34df23b08"
+checksum = "8bd11f3a29434026f5ff98c730b668ba74b1033637b8817940b54d040696133c"
 
 [[package]]
 name = "jni"
@@ -125,7 +125,7 @@ checksum = "2032c77e030ddee34a6787a64166008da93f6a352b629261d0fee232b8742dd4"
 dependencies = [
  "bitflags",
  "jni-sys",
- "ndk-sys",
+ "ndk-sys 0.3.0",
  "num_enum",
  "thiserror",
 ]
@@ -135,6 +135,15 @@ name = "ndk-sys"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6e5a6ae77c8ee183dcbbba6150e2e6b9f3f4196a7666c02a715a95692ec1fa97"
+dependencies = [
+ "jni-sys",
+]
+
+[[package]]
+name = "ndk-sys"
+version = "0.5.0+25.2.9519653"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8c196769dd60fd4f363e11d948139556a344e79d451aeb2fa2fd040738ef7691"
 dependencies = [
  "jni-sys",
 ]
@@ -275,7 +284,7 @@ dependencies = [
  "libc",
  "log",
  "ndk",
- "ndk-sys",
+ "ndk-sys 0.5.0+25.2.9519653",
  "once_cell",
  "uinput-sys",
  "unix_socket",
@@ -284,7 +293,7 @@ dependencies = [
 [[package]]
 name = "uinput-sys"
 version = "0.1.7"
-source = "git+https://github.com/tiann/rust-uinput-sys#a12357096468c2fa1d5bed720c6a00b104cc4f5a"
+source = "git+https://github.com/topminipie/rust-uinput-sys#713a0cbc94e4cbb504b568df614719417ade7901"
 dependencies = [
  "ioctl-sys",
  "libc",
