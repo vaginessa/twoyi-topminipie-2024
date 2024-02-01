@@ -7,13 +7,11 @@ android {
         applicationId "io.twoyi" // "app.vmdroid"
         compileSdk 34
         minSdkVersion 27
-        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 27
         versionCode 054
         versionName "0.5.4"
 
         ndk {
-            //noinspection ChromeOsAbiSupport
             abiFilters "arm64-v8a"
         }
     }
@@ -21,7 +19,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -29,12 +26,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
-    }
-    
-    packagingOptions {
-        jniLibs {
-            useLegacyPackaging true
-        }
     }
 
     buildFeatures {
