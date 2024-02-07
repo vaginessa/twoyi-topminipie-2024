@@ -24,7 +24,6 @@ jobs:
           mkdir ./app/src/main/assets
           cd ./app/src/main/assets
           curl -OL https://github.com/topminipie/twoyi/releases/download/0.5.4-rom/rootfs.7z
-          curl -OL https://github.com/topminipie/twoyi/releases/download/0.5.4-rom/rom.ini
 
       - name: Install JDK 17
         uses: actions/setup-java@v4
