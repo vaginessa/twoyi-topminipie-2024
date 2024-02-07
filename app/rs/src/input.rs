@@ -5,14 +5,14 @@
 use libc::*;
 use libc::{c_char, c_int};
 use ndk::event::{MotionAction, MotionEvent};
+use std::{io::Write};
 use std::mem;
 use std::thread;
-use std::{io::Write};
 use uinput_sys::*;
 
+use once_cell::sync::Lazy;
 use std::sync::mpsc::{ channel, Sender};
 use std::sync::Mutex;
-use once_cell::sync::Lazy;
 
 use log::info;
 
@@ -61,8 +61,8 @@ fn copy_to_cstr<const COUNT: usize>(data: &str, arr: &mut [u8; COUNT]) {
 
 const MAX_POINTERS: usize = 5;
 
-static INPUT_SENDER: Lazy<Mutex<Option<Sender<input_event>>>> = Lazy::new(|| { Mutex::new(None)});
-static KEY_SENDER: Lazy<Mutex<Option<Sender<input_event>>>> = Lazy::new(|| { Mutex::new(None)});
+static INPUT_SENDER: Lazy<Mutex<Option<Sender<input_event>>>> = Lazy::new(|| Mutex::new(None));
+static KEY_SENDER: Lazy<Mutex<Option<Sender<input_event>>>> = Lazy::new(|| Mutex::new(None));
 
 pub fn start_input_system(width: i32, height: i32) {
     thread::spawn(move || {
@@ -79,11 +79,14 @@ pub fn input_event_write(
     code: i32,
     val: i32,
 ) {
-    let mut tp = libc::timespec { tv_sec:0, tv_nsec: 0 };
+    let mut tp = libc::timespec {
+        tv_sec: 0,
+        tv_nsec: 0,
+    };
     let _ = unsafe { clock_gettime(CLOCK_MONOTONIC, &mut tp) };
     let tv = timeval {
         tv_sec: tp.tv_sec,
-        tv_usec: tp.tv_nsec / 1000
+        tv_usec: tp.tv_nsec / 1000,
     };
 
     let ev = input_event {
@@ -98,7 +101,6 @@ pub fn input_event_write(
 pub fn handle_touch(ev: MotionEvent) {
     let opt = INPUT_SENDER.lock().unwrap();
     if let Some(ref fd) = *opt {
-
         let action = ev.action();
         let pointer_index = ev.pointer_index();
         let pointer = ev.pointer_at_index(pointer_index);
@@ -107,7 +109,8 @@ pub fn handle_touch(ev: MotionEvent) {
 
         // info!("action: {:#?}, pointer_index: {}", action, pointer_index);
 
-        static G_INPUT_MT: Lazy<Mutex<[i32;MAX_POINTERS]>> = Lazy::new(|| {std::sync::Mutex::new([0i32;MAX_POINTERS])});
+        static G_INPUT_MT: Lazy<Mutex<[i32; MAX_POINTERS]>> =
+            Lazy::new(|| std::sync::Mutex::new([0i32; MAX_POINTERS]));
 
         match action {
             MotionAction::Down | MotionAction::PointerDown => {
