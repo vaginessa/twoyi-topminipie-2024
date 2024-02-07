@@ -5,13 +5,13 @@
 use libc::*;
 use libc::{c_char, c_int};
 use ndk::event::{MotionAction, MotionEvent};
-use std::{io::Write};
+use std::io::Write;
 use std::mem;
 use std::thread;
 use uinput_sys::*;
 
 use once_cell::sync::Lazy;
-use std::sync::mpsc::{ channel, Sender};
+use std::sync::mpsc::{channel, Sender};
 use std::sync::Mutex;
 
 use log::info;
