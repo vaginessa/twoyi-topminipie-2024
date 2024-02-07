@@ -3,10 +3,10 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 use jni::objects::JValue;
-use jni::sys::{jclass, jfloat, jint, jobject, JNI_ERR, jstring};
+use jni::sys::{jclass, jfloat, jint, jobject, jstring, JNI_ERR};
 use jni::JNIEnv;
 use jni::{JavaVM, NativeMethod};
-use log::{error, info, debug};
+use log::{debug, error, info};
 use ndk_sys;
 use std::ffi::c_void;
 
@@ -68,8 +68,10 @@ pub fn renderer_init(
         width, height, fps
     );
 
-    if RENDERER_STARTED.compare_exchange(false, true, 
-        Ordering::Acquire, Ordering::Relaxed).is_err() {
+    if RENDERER_STARTED
+        .compare_exchange(false, true, Ordering::Acquire, Ordering::Relaxed)
+        .is_err()
+    {
         let win = window.ptr().as_ptr() as *mut c_void;
         unsafe {
             renderer_bindings::setNativeWindow(win);
@@ -120,7 +122,17 @@ pub fn renderer_reset_window(
     debug!("reset_window");
     unsafe {
         let window = ndk_sys::ANativeWindow_fromSurface(env.get_native_interface(), surface);
-        renderer_bindings::resetSubWindow(window as *mut c_void, 0, 0, _width, _height, _width, _height, 1.0, 0.0);
+        renderer_bindings::resetSubWindow(
+            window as *mut c_void,
+            0,
+            0,
+            _width,
+            _height,
+            _width,
+            _height,
+            1.0,
+            0.0,
+        );
     }
 }
 
@@ -142,8 +154,8 @@ pub fn handle_touch(env: JNIEnv, _clz: jclass, event: jobject) {
     if let JValue::Long(p) = ptr {
         let ev = unsafe {
             let nonptr =
-            std::ptr::NonNull::new(std::mem::transmute::<i64, *mut ndk_sys::AInputEvent>(p))
-                .unwrap();
+                std::ptr::NonNull::new(std::mem::transmute::<i64, *mut ndk_sys::AInputEvent>(p))
+                    .unwrap();
             ndk::event::MotionEvent::from_ptr(nonptr)
         };
         input::handle_touch(ev)
@@ -195,7 +207,11 @@ unsafe fn JNI_OnLoad(jvm: JavaVM, _reserved: *mut c_void) -> jint {
 
     let class_name: &str = "io/twoyi/Renderer";
     let jni_methods = [
-        jni_method!(init, renderer_init, "(Landroid/view/Surface;Ljava/lang/String;FFI)V"),
+        jni_method!(
+            init,
+            renderer_init,
+            "(Landroid/view/Surface;Ljava/lang/String;FFI)V"
+        ),
         jni_method!(
             resetWindow,
             renderer_reset_window,
