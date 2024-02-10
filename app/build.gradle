@@ -4,7 +4,7 @@ plugins {
 
 android {
     defaultConfig {
-        applicationId "io.twoyi" // "app.vmdroid"
+        applicationId 'app.vmdroid'
         compileSdk 34
         minSdkVersion 27
         //noinspection ExpiredTargetSdkVersion
