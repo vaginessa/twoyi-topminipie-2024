@@ -4,7 +4,7 @@ plugins {
 
 android {
     defaultConfig {
-        applicationId 'app.vmdroid'
+        applicationId 'io.twoyi' // app.vmdroid
         compileSdk 34
         minSdkVersion 27
         //noinspection ExpiredTargetSdkVersion
@@ -41,7 +41,7 @@ android {
         buildConfig = true
     }
     
-    namespace 'io.twoyi' // "app.vmdroid"
+    namespace 'io.twoyi' // app.vmdroid
 }
 
 dependencies {
