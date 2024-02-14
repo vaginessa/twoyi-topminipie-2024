@@ -29,13 +29,13 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: 17
-          distribution: 'temurin'
-          cache: 'gradle'
+          distribution: temurin
+          cache: gradle
 
       - name: Install NDK
         uses: nttld/setup-ndk@v1
         with:
-          ndk-version: r26b
+          ndk-version: r26c
           local-cache: true
 
       - name: Install Rust
@@ -46,7 +46,7 @@ jobs:
       - name: Rust cache
         uses: Swatinem/rust-cache@v2
         with:
-          workspaces: "app/rs"
+          workspaces: 'app/rs'
 
       - name: Install my fork cargo-ndk
         run: |
