@@ -17,7 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: gradle/wrapper-validation-action@v2
+      
+      - name: Verify gradle wrapper
+        uses: gradle/wrapper-validation-action@v2
 
       - name: Download ROM
         run: |
