@@ -26,6 +26,7 @@ jobs:
           mkdir ./app/src/main/assets
           cd ./app/src/main/assets
           curl -OL https://github.com/topminipie/twoyi/releases/download/0.5.4-rom/rootfs.7z
+          echo
           echo '6ddd7424eb897310ee5858f2e392750ec5ad1f5bbef1e30c7d3493142cbf4ff1  rootfs.7z' | sha256sum -c
 
       - name: Install JDK 17
