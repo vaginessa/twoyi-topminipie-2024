@@ -265,7 +265,7 @@ public class Render2Activity extends AppCompatActivity implements View.OnTouchLi
         WindowManager windowManager = getWindowManager();
         Display defaultDisplay = windowManager.getDefaultDisplay();
         Display.Mode[] supportedModes = defaultDisplay.getSupportedModes();
-        float fps = 45;
+        float fps = 60;
         for (Display.Mode supportedMode : supportedModes) {
             float refreshRate = supportedMode.getRefreshRate();
             if (refreshRate > fps) {
