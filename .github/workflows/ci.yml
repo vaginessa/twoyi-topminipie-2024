@@ -70,6 +70,7 @@ jobs:
         run: ./gradlew assembleDebug --warning-mode all
 
       - name: Upload Apk
+        if: github.repository == 'topminipie/twoyi'
         uses: actions/upload-artifact@v4
         with:
           name: apk
