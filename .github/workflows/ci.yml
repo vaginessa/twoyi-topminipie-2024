@@ -53,7 +53,7 @@ jobs:
 
       - name: Install my fork cargo-ndk
         run: |
-          cargo install --git https://github.com/topminipie/cargo-ndk.git
+          cargo install --locked --git https://github.com/topminipie/cargo-ndk.git
 
       - name: Build libtwoyi.so
         run: |
