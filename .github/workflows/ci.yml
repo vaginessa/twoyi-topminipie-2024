@@ -67,7 +67,7 @@ jobs:
           cargo fmt --all -- --check
 
       - name: Build app
-        run: ./gradlew assembleDebug --warning-mode all
+        run: ./gradlew assembleDebug --no-daemon --warning-mode all
 
       - name: Upload Apk
         if: github.repository == 'topminipie/twoyi'
