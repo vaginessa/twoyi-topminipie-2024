@@ -18,8 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Verify gradle wrapper
-        uses: gradle/wrapper-validation-action@v2
+      - name: Validate Gradle Wrapper
+        uses: gradle/actions/wrapper-validation@v3
 
       - name: Download ROM
         run: |
@@ -38,7 +38,7 @@ jobs:
       - name: Install NDK
         uses: nttld/setup-ndk@v1
         with:
-          ndk-version: r26c
+          ndk-version: r26d
           local-cache: true
 
       - name: Install Rust
