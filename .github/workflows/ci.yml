@@ -9,9 +9,6 @@ on:
     paths-ignore:
       - 'README.md'
 
-permissions:
-  contents: read
-
 jobs:
   debug-build:
     runs-on: ubuntu-latest
